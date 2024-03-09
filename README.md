@@ -29,6 +29,6 @@ OnClientHandshake which has the HandshakePacket as the argument.
 # Packet Serializer/ObjectSerializer
 
 this is a custom serializer that stores classes as a pretty simple format. (key1:value1;key2:value2)</b>
-this class currently has a Serialize method that thats in an object (the class to serialize) & returns the serialized object/class as a string.</b>
+this class currently has a Serialize method that that takes in an object (the class to serialize) & returns the serialized object/class as a string.</b>
 Deserialize takes in a serialized string (the serialized packet) and returns it as T.</b>
 ParseSerializedString taks in a string (the serialized packet) and returns it as a dictionary of string keys & string values. (recommend using this instead of parsing it back to the packet class)
