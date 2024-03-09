@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AsyncNetworking.Server;
+
+using System;
 
 namespace AsyncServer
 {
@@ -21,7 +23,25 @@ namespace AsyncServer
             server.OnMessageReceived += (clientId, message) =>
             {
                 Console.WriteLine($"Client {clientId} sent: {message}");
-                return true;
+
+                //Console.WriteLine(message["PacketType"]);
+                switch (message["PacketType"])
+                {
+                    case "MessagePacket":
+                        //create new messagepacket
+                        MessagePacket messagePacket = new MessagePacket()
+                        {
+                            ClientId = clientId,
+                            Message = message["Message"]
+                        };
+
+                        // send messagepacket to all clients connected
+                        server.SendToAll(messagePacket).GetAwaiter().GetResult();
+
+                        return false;
+                }
+
+                return false; // invalid packet
             };
 
             Console.WriteLine("Server started...");

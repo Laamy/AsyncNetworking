@@ -96,12 +96,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Networking\Client\Client.cs" />
-    <Compile Include="Networking\ObjectSerializer.cs" />
-    <Compile Include="Networking\Packets\DisconnectPacket.cs" />
-    <Compile Include="Networking\Packets\HandshakePacket.cs" />
-    <Compile Include="Networking\Packets\Packet.cs" />
-    <Compile Include="Networking\Server\Server.cs" />
+    <Compile Include="Client\Client.cs" />
+    <Compile Include="ObjectSerializer.cs" />
+    <Compile Include="Packets\DisconnectPacket.cs" />
+    <Compile Include="Packets\HandshakePacket.cs" />
+    <Compile Include="Packets\Packet.cs" />
+    <Compile Include="Server\Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
