@@ -29,7 +29,7 @@
                 stream = client.GetStream(); // get the stream
 
                 // Wait for handshake
-                bool result = await GetHandshake();
+                bool result = await GetHandshake(); // TODO: have the client return handshake packet
 
                 if (result)
                     await ReceiveMessages();
